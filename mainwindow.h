@@ -28,7 +28,6 @@ private:
     EditorWidget *editorWidget;
     int m_EditorSize;
     int m_PieceSize;
-    int m_offset;
 };
 
 #endif // MAINWINDOW_H

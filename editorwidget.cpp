@@ -5,11 +5,12 @@
 #include <QMimeData>
 #include <QPainter>
 
-EditorWidget::EditorWidget(int editorSize, int pieceSize, QWidget *parent)
-    : QWidget(parent), m_EditorSize(editorSize*pieceSize), m_PieceSize(pieceSize)
+EditorWidget::EditorWidget(int pieceSize, QWidget *parent)
+    : QWidget(parent), m_PieceSize(pieceSize)
 {
     setAcceptDrops(true);
-    setMinimumSize(m_EditorSize, m_EditorSize);
+    setMinimumSize(5*m_PieceSize, 5*m_PieceSize);
+    setMaximumSize(10*m_PieceSize, 10*m_PieceSize);
 }
 
 void EditorWidget::clear()

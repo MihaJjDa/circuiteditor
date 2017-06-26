@@ -17,7 +17,8 @@ protected:
     void startDrag(Qt::DropActions supportedActions);
 
     int m_IconSize;
-    int m_WidgetSize;
+    int m_WidgetWidthSize;
+    int m_WidgetHeightSize;
 };
 
 

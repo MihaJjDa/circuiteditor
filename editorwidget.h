@@ -15,7 +15,7 @@ class EditorWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit EditorWidget(int editorSize, int pieceSize, QWidget *parent = 0);
+    explicit EditorWidget(int pieceSize, QWidget *parent = 0);
     void clear();
 
     int pieceSize() const;
@@ -37,7 +37,6 @@ private:
     QList<QPoint> pieceLocations;
     QRect highlightedRect;
 
-    int m_EditorSize;
     int m_PieceSize;
 };
 

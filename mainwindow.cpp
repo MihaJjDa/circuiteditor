@@ -7,8 +7,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
       m_EditorSize(6),
-      m_PieceSize(100),
-      m_offset(10)
+      m_PieceSize(100)
 {
     setupMenus();
     setupWidgets();
@@ -45,7 +44,7 @@ void MainWindow::setupWidgets()
 {
     QFrame *frame = new QFrame;
     QHBoxLayout *frameLayout = new QHBoxLayout(frame);
-    editorWidget = new EditorWidget(m_EditorSize, m_PieceSize+m_offset);
+    editorWidget = new EditorWidget(m_PieceSize);
 
     piecesList = new PiecesList(this);
 

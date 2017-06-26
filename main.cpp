@@ -8,17 +8,23 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
     MainWindow window;
-    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/dus.jpg");
-    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/ld.jpg");
-    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/lr.jpg");
-    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/lrs.jpg");
-    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/lu.jpg");
-    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/rd.jpg");
-    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/rls.jpg");
-    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/ru.jpg");
-    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/ud.jpg");
-    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/uds.jpg");
-    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/с.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/uds.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/dus.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/lrs.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/rls.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/udr.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/lrr.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/lr.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/ud.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/rd.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/ld.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/ru.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/lu.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/cd.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/cl.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/cu.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/cr.jpg");
+    window.openImage("/home/puchkinda/home/CircuitEditor/CircuitEditor/bin/с.jpg");
     window.show();
     return app.exec();
 }

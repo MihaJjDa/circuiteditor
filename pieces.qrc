@@ -1,15 +1,21 @@
 <RCC>
     <qresource prefix="/images">
-        <file>rd.jpg</file>
-        <file>rls.jpg</file>
-        <file>ru.jpg</file>
-        <file>ud.jpg</file>
-        <file>uds.jpg</file>
-        <file>ld.jpg</file>
-        <file>lr.jpg</file>
-        <file>lu.jpg</file>
-        <file>lrs.jpg</file>
-        <file>dus.jpg</file>
-        <file>с.jpg</file>
+        <file>bin/dus.jpg</file>
+        <file>bin/ld.jpg</file>
+        <file>bin/lr.jpg</file>
+        <file>bin/lrs.jpg</file>
+        <file>bin/lu.jpg</file>
+        <file>bin/rd.jpg</file>
+        <file>bin/rls.jpg</file>
+        <file>bin/ru.jpg</file>
+        <file>bin/ud.jpg</file>
+        <file>bin/uds.jpg</file>
+        <file>bin/с.jpg</file>
+        <file>bin/lrr.jpg</file>
+        <file>bin/udr.jpg</file>
+        <file>bin/cd.jpg</file>
+        <file>bin/cl.jpg</file>
+        <file>bin/cr.jpg</file>
+        <file>bin/cu.jpg</file>
     </qresource>
 </RCC>

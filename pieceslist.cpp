@@ -5,17 +5,20 @@
 #include <QMimeData>
 
 PiecesList::PiecesList(QWidget *parent)
-    : QListWidget(parent), m_IconSize(65)
+    : QListWidget(parent), m_IconSize(70)
 {
     setDragEnabled(true);
     setViewMode(QListView::IconMode);
-    setIconSize(QSize(m_IconSize, m_IconSize));
+    setIconSize(QSize(int(m_IconSize), int(m_IconSize)));
     setSpacing(5);
     setAcceptDrops(true);
     setDropIndicatorShown(true);
-    m_WidgetSize = (m_IconSize+20)*3;
-    setMinimumWidth(m_WidgetSize);
-    setMaximumWidth(m_WidgetSize);
+    m_WidgetWidthSize = (m_IconSize+23)*2;
+    m_WidgetHeightSize = (m_IconSize+19)*8;
+    setMinimumWidth(m_WidgetWidthSize);
+    setMaximumWidth(m_WidgetWidthSize);
+    setMinimumHeight(m_WidgetHeightSize);
+    setMaximumHeight(m_WidgetHeightSize);
 }
 
 void PiecesList::dragEnterEvent(QDragEnterEvent *event)
