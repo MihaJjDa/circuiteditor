@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>rd.jpg</file>
+        <file>rls.jpg</file>
+        <file>ru.jpg</file>
+        <file>ud.jpg</file>
+        <file>uds.jpg</file>
+        <file>ld.jpg</file>
+        <file>lr.jpg</file>
+        <file>lu.jpg</file>
+        <file>lrs.jpg</file>
+        <file>dus.jpg</file>
+        <file>с.jpg</file>
+    </qresource>
+</RCC>
