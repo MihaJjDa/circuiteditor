@@ -4,6 +4,8 @@
 #include <QDragEnterEvent>
 #include <QMimeData>
 
+#include <QtDebug>
+
 PiecesList::PiecesList(QWidget *parent)
     : QListWidget(parent), m_IconSize(70)
 {
@@ -38,14 +40,15 @@ void PiecesList::dropEvent(QDropEvent *event)
     QDataStream dataStream(&pieceData, QIODevice::ReadOnly);
     QPixmap pixmap;
     QPoint location;
-    dataStream >> pixmap >> location;
+    int type;
+    dataStream >> pixmap >> location >> type;
     event->setDropAction(Qt::MoveAction);
     event->accept();
 }
 
-void PiecesList::addPiece(QPixmap pixmap)
+void PiecesList::addPiece(QPixmap pixmap, int data)
 {
-    QListWidgetItem *pieceItem = new QListWidgetItem(this);
+    QListWidgetItem *pieceItem = new QListWidgetItem(this, data);
     pieceItem->setIcon(QIcon(pixmap));
     pieceItem->setData(Qt::UserRole, QVariant(pixmap));
     pieceItem->setFlags(Qt::ItemIsEnabled |
@@ -61,14 +64,15 @@ void PiecesList::startDrag(Qt::DropActions)
     QDataStream dataStream(&itemData, QIODevice::WriteOnly);
     QPixmap pixmap = qvariant_cast<QPixmap>(item->data(Qt::UserRole));
     QPoint location = item->data(Qt::UserRole+1).toPoint();
-    dataStream << pixmap << location;
+    int type = item->type();
+    dataStream << pixmap << location << type;
 
     QMimeData *mimeData = new QMimeData;
     mimeData->setData("image", itemData);
 
     QDrag *drag = new QDrag(this);
     drag->setMimeData(mimeData);
-    drag->setHotSpot(QPoint(pixmap.width()/2, pixmap.height()/2));
+    drag->setHotSpot(QPoint(pixmap.width(), pixmap.height()));
     drag->setPixmap(pixmap);
     drag->exec(Qt::MoveAction);
 }

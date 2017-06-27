@@ -14,11 +14,11 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle(tr("CircuitEditor"));
 }
 
-void MainWindow::openImage(const QString &path)
+void MainWindow::openImage(const QString &path, int data)
 {
     QPixmap newImage;
     newImage.load(path);
-    piecesList->addPiece(newImage);
+    piecesList->addPiece(newImage, data);
 }
 
 void MainWindow::setupEditor()

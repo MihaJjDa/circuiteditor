@@ -35,6 +35,7 @@ private:
     QList<QPixmap> piecePixmaps;
     QList<QRect> pieceRects;
     QList<QPoint> pieceLocations;
+    QList<int> pieceType;
     QRect highlightedRect;
 
     int m_PieceSize;

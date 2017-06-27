@@ -15,7 +15,7 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = 0);
-    void openImage(const QString &path = QString());
+    void openImage(const QString &path = QString(), int data = 0);
 
 public slots:
     void setupEditor();

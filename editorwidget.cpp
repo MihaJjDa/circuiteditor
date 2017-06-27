@@ -5,6 +5,11 @@
 #include <QMimeData>
 #include <QPainter>
 
+#include <QtDebug>
+
+#include <iostream>
+#include <cstdio>
+
 EditorWidget::EditorWidget(int pieceSize, QWidget *parent)
     : QWidget(parent), m_PieceSize(pieceSize)
 {
@@ -56,6 +61,7 @@ void EditorWidget::dropEvent(QDropEvent *event)
         pieceLocations.removeAt(found);
         piecePixmaps.removeAt(found);
         pieceRects.removeAt(found);
+        pieceType.removeAt(found);
         update(square);
     }
 
@@ -63,11 +69,15 @@ void EditorWidget::dropEvent(QDropEvent *event)
     QDataStream dataStream(&pieceData, QIODevice::ReadOnly);
     QPixmap pixmap;
     QPoint location;
-    dataStream >> pixmap >> location;
+    int type;
+    dataStream >> pixmap >> location >> type;
 
-    pieceLocations.append(location);
+    pieceLocations.append(location);   
     piecePixmaps.append(pixmap);
     pieceRects.append(square);
+    pieceType.append(type);
+
+    qDebug() << "Insert" << type << "at" << square.x()/100 << square.y()/100;
 
     highlightedRect = QRect();
     update(square);
@@ -95,16 +105,20 @@ void EditorWidget::mousePressEvent(QMouseEvent *event)
 
     QPoint location = pieceLocations[found];
     QPixmap pixmap = piecePixmaps[found];
+    int type = pieceType[found];
     pieceLocations.removeAt(found);
     piecePixmaps.removeAt(found);
     pieceRects.removeAt(found);
+    pieceType.removeAt(found);
+
+    qDebug() << "Delete" << type << "at" << square.x()/100 << square.y()/100;
 
     update(square);
 
     QByteArray itemData;
     QDataStream dataStream(&itemData, QIODevice::WriteOnly);
 
-    dataStream << pixmap << location;
+    dataStream << pixmap << location << type;
 
     QMimeData *mimeData = new QMimeData;
     mimeData->setData("image", itemData);

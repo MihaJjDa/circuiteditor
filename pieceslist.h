@@ -9,7 +9,7 @@ class PiecesList : public QListWidget
 
 public:
     explicit PiecesList(QWidget *parent = 0);
-    void addPiece(QPixmap pixmap);
+    void addPiece(QPixmap pixmap, int data = 0);
 protected:
     void dragEnterEvent(QDragEnterEvent *event);
     void dragMoveEvent(QDragMoveEvent *event);
